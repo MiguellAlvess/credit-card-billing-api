@@ -12,6 +12,7 @@
     "license": "ISC",
     "description": "",
     "devDependencies": {
+        "@prisma/client": "^6.10.1",
         "@types/express": "^5.0.3",
         "@types/jest": "^30.0.0",
         "@typescript-eslint/eslint-plugin": "^8.35.0",
