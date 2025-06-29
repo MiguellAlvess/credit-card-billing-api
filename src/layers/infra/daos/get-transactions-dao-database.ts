@@ -1,5 +1,5 @@
-import { DatabaseClient } from '../../../infra/database/database-client'
-import { GetTransactionsDAO } from '../../ports/daos/get-transactions-dao'
+import { DatabaseClient } from '../database/database-client'
+import { GetTransactionsDAO } from '../../application/ports/get-transactions-dao'
 
 export default class GetTransactionsDAODatabase implements GetTransactionsDAO {
     constructor(readonly databaseClient: DatabaseClient) {}

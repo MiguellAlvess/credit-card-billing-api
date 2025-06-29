@@ -1,5 +1,5 @@
-import CurrencyGateway from '../../ports/gateway/currency-gateway'
-import HttpClient from '../../../infra/http/http-client'
+import CurrencyGateway from '../../application/ports/currency-gateway'
+import HttpClient from '../http/http-client'
 
 export default class CurrencyGatewayHttp implements CurrencyGateway {
     constructor(
