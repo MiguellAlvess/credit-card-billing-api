@@ -1,4 +1,5 @@
 import { TransactionNotFoundError } from '../../errors/transaction'
+import Invoice from '../domain/entities/invoice'
 import { GetTransactionsDAO } from '../resources/ports/daos/get-transactions-dao'
 import CurrencyGateway from '../resources/ports/gateway/currency-gateway'
 
@@ -21,15 +22,8 @@ export default class CalculateInvoiceUseCase {
         if (!transactions) {
             throw new TransactionNotFoundError()
         }
-        let total = 0
-        for (const transaction of transactions) {
-            if (transaction.currency === 'BRL') {
-                total += transaction.amount
-            }
-            if (transaction.currency === 'USD') {
-                total += transaction.amount * currencies.usd
-            }
-        }
+        const invoice = new Invoice(transactions, currencies)
+        const total = invoice.getTotal()
         return total
     }
 }
