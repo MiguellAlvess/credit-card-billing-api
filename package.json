@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start:dev": "nodemon --watch src --ext ts --exec ts-node src/driver/main.ts",
+        "start:dev": "nodemon --watch src --ext ts --exec ts-node src/layers/driver/main.ts",
+        "start:currencies": "nodemon --watch src --ext ts --exec ts-node src/layers/resources/external-api/api-currencies.ts",
         "test": "jest --watch --passWithNoTests",
         "prepare": "husky && husky install"
     },
