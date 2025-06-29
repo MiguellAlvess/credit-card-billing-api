@@ -1,6 +1,6 @@
-import CalculateInvoiceUseCase from '../src/layers/application/calculate-invoice'
-import CurrencyGateway from '../src/layers/resources/ports/gateway/currency-gateway'
-import { GetTransactionsDAO } from '../src/layers/resources/ports/daos/get-transactions-dao'
+import CalculateInvoiceUseCase from '../src/layers/application/use-cases/calculate-invoice'
+import CurrencyGateway from '../src/layers/application/ports/currency-gateway'
+import { GetTransactionsDAO } from '../src/layers/application/ports/get-transactions-dao'
 
 describe('Calculate Invoice Use Case', () => {
     test('should calculate invoice', async () => {
@@ -29,7 +29,7 @@ describe('Calculate Invoice Use Case', () => {
             currencyGateway,
         )
 
-        const total = await sut.execute('1234')
-        expect(total).toBe(2300)
+        const output = await sut.execute('1234')
+        expect(output.total).toBe(2300)
     })
 })
