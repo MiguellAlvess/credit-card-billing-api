@@ -3,9 +3,9 @@ import 'dotenv/config'
 import CalculateInvoiceUseCase from '../application/calculate-invoice'
 import GetTransactionsDAODatabase from '../resources/adapters/daos/get-transactions-dao-database'
 import CurrencyGatewayHttp from '../resources/adapters/gateway/currency-gateway-http'
-import AxiosAdapter from '../infrastructure/http/axios-adapter'
+import AxiosAdapter from '../infra/http/axios-adapter'
 
-import { PrismaAdapter } from '../infrastructure/database/prisma-adapter'
+import { PrismaAdapter } from '../infra/database/prisma-adapter'
 
 const app = express()
 

@@ -1,4 +1,4 @@
-import { DatabaseClient } from '../../../infrastructure/database/database-client'
+import { DatabaseClient } from '../../../infra/database/database-client'
 import { GetTransactionsDAO } from '../../ports/daos/get-transactions-dao'
 
 export default class GetTransactionsDAODatabase implements GetTransactionsDAO {
@@ -8,7 +8,7 @@ export default class GetTransactionsDAODatabase implements GetTransactionsDAO {
         cardNumber: string,
         month: number,
         year: number,
-    ): Promise<Array<any>> {
+    ): Promise<any> {
         const transactions = await this.databaseClient.cardTransaction.findMany(
             {
                 where: {
