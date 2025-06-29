@@ -27,6 +27,15 @@ export default [
                 'warn',
                 { argsIgnorePattern: '^_' },
             ],
+            '@typescript-eslint/ban-types': [
+                'error',
+                {
+                    extendDefaults: true,
+                    types: {
+                        Function: false,
+                    },
+                },
+            ],
         },
     },
 ]
