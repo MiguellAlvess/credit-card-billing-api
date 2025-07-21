@@ -4,7 +4,7 @@
     "main": "index.js",
     "scripts": {
         "start:dev": "nodemon --watch src --ext ts --exec ts-node src/main.ts",
-        "start:currencies": "nodemon --watch src --ext ts --exec ts-node src/layers/infra/external-api/api-currencies.ts",
+        "start:currencies": "nodemon --watch src --ext ts --exec ts-node src/infra/external-api/api-currencies.ts",
         "test": "jest --watch --passWithNoTests",
         "prepare": "husky && husky install"
     },

@@ -1,4 +1,3 @@
-import { TransactionNotFoundError } from '../../../errors/transaction'
 import Invoice from '../../domain/entities/invoice'
 import CurrencyGateway from '../ports/currency-gateway'
 import { GetTransactionsDAO } from '../ports/get-transactions-dao'
@@ -19,9 +18,6 @@ export default class CalculateInvoiceUseCase {
             month,
             year,
         )
-        if (!transactions) {
-            throw new TransactionNotFoundError()
-        }
         const invoice = new Invoice(transactions, currencies)
         const total = invoice.getTotal()
         return {

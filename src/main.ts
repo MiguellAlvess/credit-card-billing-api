@@ -1,11 +1,10 @@
-import CalculateInvoiceUseCase from '../src/layers/application/use-cases/calculate-invoice'
-import GetTransactionsDAODatabase from './layers/infra/daos/get-transactions-dao-database'
-import CurrencyGatewayHttp from './layers/infra/gateway/currency-gateway-http'
-import AxiosAdapter from './layers/infra/http/axios-adapter'
-
-import { PrismaAdapter } from './layers/infra/database/prisma-adapter'
-import InvoiceController from './layers/infra/controller/invoice-controller'
-import { ExpressAdapter } from './layers/infra/http/express-adapter'
+import CalculateInvoiceUseCase from './application/use-cases/calculate-invoice'
+import InvoiceController from './infra/controller/invoice-controller'
+import GetTransactionsDAODatabase from './infra/daos/get-transactions-dao-database'
+import { PrismaAdapter } from './infra/database/prisma-adapter'
+import CurrencyGatewayHttp from './infra/gateway/currency-gateway-http'
+import AxiosAdapter from './infra/http/axios-adapter'
+import { ExpressAdapter } from './infra/http/express-adapter'
 
 const databaseClient = new PrismaAdapter()
 const getTransactionsDAO = new GetTransactionsDAODatabase(databaseClient)
