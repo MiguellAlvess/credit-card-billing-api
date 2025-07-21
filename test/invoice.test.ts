@@ -1,4 +1,4 @@
-import Invoice from '../src/layers/domain/entities/invoice'
+import Invoice from '../src/domain/entities/invoice'
 
 describe('Invoice', () => {
     test('should calculate invoice', async () => {
