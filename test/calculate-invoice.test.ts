@@ -1,6 +1,6 @@
-import CalculateInvoiceUseCase from '../src/layers/application/use-cases/calculate-invoice'
-import CurrencyGateway from '../src/layers/application/ports/currency-gateway'
-import { GetTransactionsDAO } from '../src/layers/application/ports/get-transactions-dao'
+import CurrencyGateway from '../src/application/ports/currency-gateway'
+import { GetTransactionsDAO } from '../src/application/ports/get-transactions-dao'
+import CalculateInvoiceUseCase from '../src/application/use-cases/calculate-invoice'
 
 describe('Calculate Invoice Use Case', () => {
     test('should calculate invoice', async () => {
